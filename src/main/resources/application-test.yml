@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: college-club-backend-test
+
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: 9a4f2c8d3e71b5a0f6c2e8d1a4b7c9e0f2a5d8b1e4c7a0d3f6b9c2e5a8d1f4b7
+    expiration-ms: 3600000
+    refresh-expiration-ms: 86400000
+  cors:
+    allowed-origins: "*"
